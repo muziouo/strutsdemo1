@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+
+<!-- ================================================ Form Bean Definitions -->
+
+    <form-beans>
+        <form-bean name="LoginForm" type="gp.LoginActionForm"></form-bean>
+    </form-beans>
+
+<!-- =========================================== Action Mapping Definitions -->
+
+    <action-mappings>
+            <!-- Default "Welcome" action -->
+            <!-- Forwards to Welcome.jsp -->
+       <action path="/login"
+               name="LoginForm"
+               type="gp.LoginAction"
+               scope="request"
+       >        
+             <forward name="success" path="/login_success.jsp"></forward>       
+             <forward name="error" path="/login_error.jsp"></forward>
+       </action>      
+    </action-mappings>
+    
+</struts-config>
+
